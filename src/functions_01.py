@@ -5,16 +5,8 @@ def contar_lineas(cadena: str) -> int:
     return len(cadena.split("\n"))
 
 def contar_palabras(cadena: str) -> int:
-    '''Retorna la cantidad de palabras filtrando solo letras'''
-    # iteramos sobre todo la cadena para hallar chars que sean letras
-    texto_limpio = ""
-    for caracter in cadena:
-        if caracter.isalpha():
-            texto_limpio += caracter
-        else:
-            texto_limpio += " "
-        
-    return len(texto_limpio.split())
+    '''Retorna la cantidad de palabras de una cadena'''
+    return len(cadena.split())
 
 def prom_palabras(cadena: str) -> float:
     '''Retorna el promedio de palabras por linea de una cadena'''
