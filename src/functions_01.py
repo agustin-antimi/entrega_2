@@ -1,5 +1,3 @@
-import re
-
 def contar_lineas(cadena: str) -> int:
     '''Retorna la cantidad de lineas de una cadena'''
     return len(cadena.split("\n"))
