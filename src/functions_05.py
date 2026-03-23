@@ -1,5 +1,9 @@
 # Funcion auxiliar
-def calcular_costo_envio(peso, zona):
+def calcular_costo_envio(peso: float, zona: str) -> str:
+    """
+    Recibe un peso y una zona ['local', 'regional', 'nacional'] y retorna
+    un str espesificando el costo de envio.
+    """
     zona = zona.lower().strip()
     
     # Diccionario de tarifas
@@ -28,6 +32,9 @@ def calcular_costo_envio(peso, zona):
 
 # Imprime el resultado y permite ingresar valores
 def calculadora_precio_envio():
+    """
+    Sirve como entrada y salida para e usuario
+    """
     print("--- Calculadora de Costo de Envio ---")
     try:
         peso_input = float(input("Ingrese el peso del paquete en kg: "))
