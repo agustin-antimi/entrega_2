@@ -1,6 +1,7 @@
 def inicializar_participante(participantes, name):
     """Inicializa el diccionario para un participante nuevo"""
     
+    # Inicializamos al participante con su nombre como key
     participantes[name] = {
         "total_score": 0,
         "max_points": 0,
@@ -19,15 +20,18 @@ def actualizar_puntajes(participantes, name, suma):
 def procesar_ronda(ronda, participantes):
     """Procesa una ronda completa"""
     
+    # Estructura que nos permite alamacenar el total de puntos por participante
     round_points = {}
     
-    # Procesa todos los puntajes de una ronda especifica
+    # Procesa todos los puntajes de la ronda
     for name, judges in ronda["scores"].items():
         suma = sum(judges.values())
         
+        # Si el participante aun no se encuentra registado, lo inicializamos
         if name not in participantes:
             inicializar_participante(participantes, name)
             
+        # Actualizamos los campos del participante    
         actualizar_puntajes(participantes, name, suma)
         round_points[name] = suma
         
@@ -36,9 +40,10 @@ def procesar_ronda(ronda, participantes):
 def registrar_ganador_ronda(participantes, round_winner, theme, round_points):
     """Encuentra al ganador usando max"""
     
+    # Obtenemos el nombre del ganador de la ronda
     name_round_winner = max(round_points, key=round_points.get)
     
-    # Suma la victoria y guarda el registro
+    # Actualizamos la cantidad de rondas ganadas
     participantes[name_round_winner]["wining_rounds"] += 1
     round_winner[theme] = {name_round_winner: round_points[name_round_winner]}
 
