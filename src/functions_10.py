@@ -54,3 +54,21 @@ def definir_promedios(points, rounds: int) -> float:
     """
 
     return points / rounds
+
+
+def ordenar_participantes(participantes):
+    """
+    Ordena a los participantes en del diccionario por puntos de forma descendente
+    """
+
+    participantes_sorted = dict(sorted(
+            participantes.items(),
+            # x[1] accede al diccionario interno de cada participante
+            key=lambda x: x[1]["total_score"],
+            reverse=True 
+        ))
+    
+    return participantes_sorted
+
+
+
