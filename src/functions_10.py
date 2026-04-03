@@ -1,5 +1,7 @@
 def inicializar_participante(participantes, name):
-    """Inicializa el diccionario para un participante nuevo"""
+    """
+    Inicializa el diccionario para un participante nuevo
+    """
     
     # Inicializamos al participante con su nombre como key
     participantes[name] = {
@@ -9,7 +11,9 @@ def inicializar_participante(participantes, name):
     }
 
 def actualizar_puntajes(participantes, name, suma):
-    """Contador de puntaje total, y maximo del participante"""
+    """
+    Contador de puntaje total, y maximo del participante
+    """
     
     participantes[name]["total_score"] += suma
     
@@ -18,7 +22,9 @@ def actualizar_puntajes(participantes, name, suma):
         participantes[name]["max_points"] = suma
 
 def procesar_ronda(ronda, participantes):
-    """Procesa una ronda completa"""
+    """
+    Procesa una ronda completa
+    """
     
     # Estructura que nos permite alamacenar el total de puntos por participante
     round_points = {}
@@ -38,7 +44,9 @@ def procesar_ronda(ronda, participantes):
     return round_points
 
 def registrar_ganador_ronda(participantes, round_winner, theme, round_points):
-    """Encuentra al ganador usando max"""
+    """
+    Encuentra al ganador usando max
+    """
     
     # Obtenemos el nombre del ganador de la ronda
     name_round_winner = max(round_points, key=round_points.get)
@@ -47,7 +55,7 @@ def registrar_ganador_ronda(participantes, round_winner, theme, round_points):
     participantes[name_round_winner]["wining_rounds"] += 1
     round_winner[theme] = {name_round_winner: round_points[name_round_winner]}
 
-def definir_promedios(points, rounds: int) -> float:
+def definir_promedios(points, rounds):
     """
     Determina un promedio en base a un total de puntos y 
     la cantidad de rondas
