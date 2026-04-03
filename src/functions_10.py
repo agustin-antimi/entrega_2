@@ -77,6 +77,3 @@ def ordenar_participantes(participantes):
         ))
     
     return participantes_sorted
-
-
-

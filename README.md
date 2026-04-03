@@ -1,6 +1,9 @@
+Alumno: Agustin Antimi
+
+Legajo: 17816/1
+
 # entrega_2
 Este repositrio consta de la entrega 2 de la practica.
-
 
 ## Instalación de dependencias
 
